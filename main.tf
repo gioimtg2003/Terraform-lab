@@ -11,16 +11,17 @@ provider "docker" {
   
 }
 
-resource "docker_image" "nginx" {
-   name = "nginx:latest"
-   keep_locally = false
+resource "docker_image" "front-end" {
+   name = "front-end:latest"
+#    keep_locally = false
 }
 
-resource "docker_container" "nginx" {
-    image = docker_image.nginx.image_id
-    name  = "test-nginx"
+resource "docker_container" "front-end" {
+    image = docker_image.front-end.image_id
+    name  = "front-end"
+   
     ports {
-        internal = 80
+        internal = 3000
         external = 8080
     }
 }
