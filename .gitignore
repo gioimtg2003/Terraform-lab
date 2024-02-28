@@ -1,2 +1,3 @@
 .terraform/*
 .terraform.*
+xenial-server-cloudimg-amd64-vagrant.box
